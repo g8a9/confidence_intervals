@@ -10,9 +10,13 @@ Confidence Intervals
 Simple evaluation of classification confidence intervals.
 
 ```bash
-git clone https://github.com/g8a9/confidence_intervals.git
-pip install -e confidence_intervals
+pip install git+https://github.com/g8a9/confidence_intervals.git
 ```
+
+
+or 
+
+
 
 <!-- -   Free software: MIT license -->
 <!-- -   Documentation: <https://confidence-intervals.readthedocs.io>. -->
