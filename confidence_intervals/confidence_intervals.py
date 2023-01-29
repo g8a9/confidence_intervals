@@ -88,7 +88,18 @@ def confidence_over_seeds(
     score_func_args={},
     ci_level: int = 95,
 ):
-    """Compute confidence intervals using the predictions of different seeds."""
+    """Compute confidence intervals using the predictions of different seeds.
+
+    Args:
+        y_true (ndarray): ground truth
+        y_pred (List[ndarray]): list of predictions, one per seed
+        score_func: any callable that takes as input the firt two parameters of this function and all named parameters specified, i.e., score_func(y_true, y_pred, **score_func_args). The callable must return a scalar value. Default sklearn.metrics.accuracy_score
+        score_func_args (dict): additional named paramters used for the scoring function. Default dict()
+        ci_level (int): confidence interval level, it must be between 0 and 100. Default 95
+
+    Returns:
+        ConfidenceResult: object containing all information about the run, including estimated confidence intervals).
+    """
     check_ci_level(ci_level)
 
     n_seeds = len(y_pred)
